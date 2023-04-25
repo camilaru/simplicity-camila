@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contato - Syplicity</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header>
+        <div class="limitador">
+            <h1>
+                <a href="index.html">
+                    Simplicity
+                </a>
+            </h1>
+            <nav>
+                <h2><a href="" class="icone">Menu &equiv;</a></h2>
+                <ul class="menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="produtos.html">Produtos</a></li>
+                    <li><a href="servicos.html">Serviços</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="conteudo limitador">
+            <h2>Contato</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam, distinctio culpa facilis sunt debitis
+                natus nisi beatae perferendis autem eligendi.
+            </p>
+
+            <form action="" method="post">
+
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome" required>
+                </div>
+
+                </div>
+                <label for="email:">E-mail:</label>
+                <input type="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="nascimento">Data de Nascimento:</label>
+                    <input type="date" name="nascimento" id="nascimento">
+                </div>
+
+                <div>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" name="telefone" id="telefone">
+                </div>
+
+                <div>
+                    <label for="idade">Idade</label>
+                    <input type="number" name="idade" id="idade">
+                </div>
+
+                <div>
+                    <p>Deseja receber informativos?</p>
+
+                    <input type="radio" name="informativos" id="sim">
+                    <label for="sim">Sim</label>
+                    <input type="radio" name="informativos" id="nao">
+                    <label for="nao">Não</label>
+                </div>
+
+                <div>
+                    <p>Informe seus interesses:</p>
+
+                    <input type="checkbox" name="interesses" id="design">
+                    <label for="design">Design</label>
+
+                    <input type="checkbox" name="interesses" id="marketing">
+                    <label for="marketing">Marketig</label>
+
+                    <input type="checkbox" name="interesses" id="programacao">
+                    <label for="programacao">Programação</label>
+                </div>
+
+                <div>
+                    <label for="assunto">Assunto:</label>
+                    <select name="assunto" id="assunto" required>
+                        <option value=""></option>
+                        <option >Orçamentos</option>
+                        <option>Dúvidas</option>
+                        <option>Elogios</option>
+                        <option>Reclamações</option>
+                        <option>Outros</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="mensagem">Mensagem</label><br>
+                    <textarea maxlenght="100" name="mensagem" id="mensagem" cols="30" rows="10" required></textarea>
+                </div>
+
+                <button type="submit">Enviar</button>
+
+
+            </form>
+
+        </article>
+    </main>
+    <footer>
+        <p>Simplicity é um site fictício desenvolvido educacionalmente<br>
+            Senac Penha - 2023</p>
+    </footer>
+
+    <script src="js/menu.js"></script>
+
+</body>
+
+</html>
