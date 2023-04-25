@@ -4,8 +4,10 @@ const campoCep = document.querySelector("#cep");
 const campoEndereco = document.querySelector("#endereco");
 const campoBairro = document.querySelector("#bairro");
 const campoCidade = document.querySelector("#cidade");
+const campoEstado = document.querySelector("#estado");
 const status = document.querySelector("#status");
 const botaoLocalizar = document.querySelector("#localizar-cep");
+
 
 /* Monitorando o evento de acionamento do botão localizar cep */
 
@@ -33,6 +35,21 @@ botaoLocalizar.addEventListener("click", function (event) {
     /* Etapa 4...então, extraia os dados da resposta e mostre na tela */
     .then( function(dados){
         console.log(dados);
+        //Se existir o indicador "erro" no objeto dados
+        if("erro" in dados){
+            //apresentamos o cep existe então mostramos
+        }else {
+            console.log("Cep não encontrado!");
+
+            campoEndereco.value = dados.logradouro;
+            campoBairro.value = dados.bairro;
+            campoCidade.value = dados.localidade;
+            campoEstado.value = dados.uf;
+
+
+        }
+
+
     })
 
 
