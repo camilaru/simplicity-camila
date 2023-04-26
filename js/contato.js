@@ -1,12 +1,19 @@
 /*  Selecionando elementos a serem manipulados */
 const formulario = document.querySelector("form");
-const campoCep = document.querySelector("#cep");
-const campoEndereco = document.querySelector("#endereco");
-const campoBairro = document.querySelector("#bairro");
-const campoCidade = document.querySelector("#cidade");
-const campoEstado = document.querySelector("#estado");
-const status = document.querySelector("#status");
-const botaoLocalizar = document.querySelector("#localizar-cep");
+const campoCep = formulario.querySelector("#cep");
+const campoTelefone = formulario.querySelector("#telefone");
+const campoEndereco = formulario.querySelector("#endereco");
+const campoBairro = formulario.querySelector("#bairro");
+const campoCidade = formulario.querySelector("#cidade");
+const campoEstado = formulario.querySelector("#estado");
+const mensagem = formulario.querySelector("#status");
+const botaoLocalizar = formulario.querySelector("#localizar-cep");
+
+/* Ativação das Máscaras */
+$(campoCep).mask("00000-000");
+$(campoTelefone).mask("(00)0000-0000");
+
+
 
 
 /* Monitorando o evento de acionamento do botão localizar cep */
@@ -30,27 +37,31 @@ botaoLocalizar.addEventListener("click", function (event) {
     /* Etapa 2: acesse e inicie uma comunicação com o servidor da URL indicada */
     fetch(url)
 
-    /* Etapa 3: ...e então, recupere a resposta do servidor */
-    .then(resposta => resposta.json())
-    /* Etapa 4...então, extraia os dados da resposta e mostre na tela */
-    .then( function(dados){
-        console.log(dados);
-        //Se existir o indicador "erro" no objeto dados
-        if("erro" in dados){
-            //apresentamos o cep existe então mostramos
-        }else {
-            console.log("Cep não encontrado!");
+        /* Etapa 3: ...e então, recupere a resposta do servidor */
+        .then(resposta => resposta.json())
+        /* Etapa 4...então, extraia os dados da resposta e mostre na tela */
+        .then(function (dados) {
+            console.log(dados);
+            //Se existir o indicador "erro" no objeto dados
+            if ("erro" in dados) {
+                //apresentamos o cep existe então mostramos
+                mensagem.innerHTML = "CEP não encontrado!";
+                mensagem.style.color = "red";
+                campoCep.focus();
 
-            campoEndereco.value = dados.logradouro;
-            campoBairro.value = dados.bairro;
-            campoCidade.value = dados.localidade;
-            campoEstado.value = dados.uf;
+            } else {
+                mensagem.innerHTML = "CEP encontrado!";
+                mensagem.style.color = "blue";
+                campoEndereco.value = dados.logradouro;
+                campoBairro.value = dados.bairro;
+                campoCidade.value = dados.localidade;
+                campoEstado.value = dados.uf;
 
 
-        }
+            }
 
 
-    })
+        })
 
 
 
