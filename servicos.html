@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Serviços - Syplicity</title>
+    <link rel="stylesheet" href="lightbox/css/lightbox.min.css">
+
     <link rel="stylesheet" href="css/estilos.css">
+
+
 </head>
 
 <body>
@@ -41,10 +45,15 @@
                 ut in error repellendus saepe?</p>
 
             <figure>
-                <img src="imagens/desenvolvimento-web-mini.jpg" alt="">
-                <img src="imagens/marketing-digital-mini.jpg" alt="">
-                <img src="imagens/design-grafico-mini.jpg" alt="">
-                <img src="imagens/consultoria-treinamento-mini.jpg" alt="">
+                
+                <a data-lightbox="galeria" data-title="Front-End" href="imagens/desenvolvimento-web.jpg"><img src="imagens/desenvolvimento-web-mini.jpg" alt=""></a>
+
+                <a data-lightbox="galeria" data-title="Venda Mais!" href="imagens/marketing-digital.jpg"><img src="imagens/marketing-digital-mini.jpg" alt=""></a>
+
+                <a data-lightbox="galeria" data-title="Design Gráfico" href="imagens/design-grafico.jpg"><img src="imagens/design-grafico-mini.jpg" alt=""></a>
+
+                <a data-lightbox="galeria" data-title="Aprenda o que quiser!" href="imagens/consultoria-treinamento.jpg"><img src="imagens/consultoria-treinamento-mini.jpg" alt=""></a>
+
             </figure>
         </article>
     </main>
@@ -53,8 +62,16 @@
             Senac Penha - 2023</p>
     </footer>
 
+    <!--Biblioteca jQuery (depêndencia)  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- JS do plugin Lightbox -->
+    <script src="lightbox/js/lightbox.min.js"></script>
+
     <script src="js/menu.js"></script>
-    
+
+    <script src="js/galeria.js"></script>
+
 </body>
 
 </html>
